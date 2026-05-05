@@ -58,12 +58,15 @@ const translations = {
 // 2. STATE
 // ——————————————————————————————————————————————
 let currentLang = "en"; // Default language
+let currentTheme = localStorage.getItem("theme") || "dark"; // Default theme
 
 // ——————————————————————————————————————————————
 // 3. DOM REFERENCES
 // ——————————————————————————————————————————————
 const langToggle = document.getElementById("lang-toggle");
 const langLabel = langToggle.querySelector(".lang-label");
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector(".theme-icon");
 const menuToggle = document.getElementById("menu-toggle");
 const mobileNav = document.getElementById("mobile-nav");
 const allNavLinks = document.querySelectorAll(".nav-link, .mobile-nav-link");
@@ -157,7 +160,30 @@ menuToggle.addEventListener("click", () => {
 });
 
 // ——————————————————————————————————————————————
-// 7. INITIALISATION
+// 7. THEME TOGGLE
+// ——————————————————————————————————————————————
+
+/**
+ * Apply the given theme to the page.
+ * Sets data-theme on <html> and updates the toggle icon.
+ */
+function applyTheme(theme) {
+  currentTheme = theme;
+  document.documentElement.setAttribute("data-theme", theme);
+  // ☀ = currently dark, click to switch to light
+  // ☽ = currently light, click to switch to dark
+  themeIcon.textContent = theme === "dark" ? "☀" : "☽";
+  localStorage.setItem("theme", theme);
+}
+
+themeToggle.addEventListener("click", () => {
+  applyTheme(currentTheme === "dark" ? "light" : "dark");
+});
+
+// ——————————————————————————————————————————————
+// 8. INITIALISATION
 // ——————————————————————————————————————————————
 // Set default language on first load
 applyLanguage("en");
+// Apply saved or default theme
+applyTheme(currentTheme);
