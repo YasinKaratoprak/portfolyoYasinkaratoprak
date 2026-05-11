@@ -11,6 +11,10 @@ const translations = {
   en: {
     nav_home: "Homepage",
     nav_about: "About",
+    nav_projects: "Projects",
+    proj_repoverse_title: "Repoverse",
+    proj_repoverse_desc: "Repoverse is a web-based utility built to eliminate the friction of setting up new systems and testing environments. Supporting Ubuntu, Arch, Fedora, macOS, and Windows, it generates customized scripts to install developer tools, offensive security packages, and daily applications with a single command. Whether you are provisioning a fresh Linux environment or preparing a dedicated red teaming virtual machine, Repoverse instantly compiles the necessary package manager commands (apt, pacman, yay, brew, etc.) and readies them for immediate execution",
+    proj_repoverse_link: "www.repoverse.yasinkaratoprak.com",
     nav_presentations: "Presentations",
     nav_blog: "Blog",
     nav_contact: "Contact",
@@ -33,6 +37,10 @@ const translations = {
   tr: {
     nav_home: "Ana Sayfa",
     nav_about: "Hakkımda",
+    nav_projects: "Projeler",
+    proj_repoverse_title: "Repoverse",
+    proj_repoverse_desc: "Repoverse, yeni bir sistem veya test ortamı kurarken harcanan zamanı en aza indirmek için tasarlanmış web tabanlı bir araçtır. Ubuntu, Arch, Fedora, macOS ve Windows işletim sistemlerini destekleyerek; geliştirici araçlarını, siber güvenlik yazılımlarını ve günlük uygulamaları tek bir komutla kurmanızı sağlayan özel terminal betikleri üretir. İster yeni bir Linux ortamını kişiselleştiriyor olun, ister bir red teaming sanal makinesini hazırlıyor olun, Repoverse ihtiyaç duyduğunuz tüm paket yöneticisi (apt, pacman, yay, brew vb.) komutlarını saniyeler içinde oluşturup doğrudan kopyalamanıza olanak tanır",
+    proj_repoverse_link: "www.repoverse.yasinkaratoprak.com",
     nav_presentations: "Sunumlar",
     nav_blog: "Blog",
     nav_contact: "İletişim",
