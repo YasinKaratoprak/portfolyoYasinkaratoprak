@@ -271,10 +271,18 @@ function initBackground() {
     }
   }
 
+  function isLight() {
+    return document.documentElement.getAttribute("data-theme") === "light";
+  }
+
   function draw() {
-    // Fade trail
-    ctx.fillStyle = "rgba(3, 3, 5, 0.08)";
-    ctx.fillRect(0, 0, w, h);
+    // Fade trail — use transparent clear for light mode, dark overlay for dark mode
+    if (isLight()) {
+      ctx.clearRect(0, 0, w, h);
+    } else {
+      ctx.fillStyle = "rgba(3, 3, 5, 0.08)";
+      ctx.fillRect(0, 0, w, h);
+    }
     drawMatrixRain();
     drawNetwork();
     requestAnimationFrame(draw);
@@ -287,8 +295,10 @@ function initBackground() {
   resize();
   createParticles();
   // Initial clear
-  ctx.fillStyle = "rgba(3, 3, 5, 1)";
-  ctx.fillRect(0, 0, w, h);
+  if (!isLight()) {
+    ctx.fillStyle = "rgba(3, 3, 5, 1)";
+    ctx.fillRect(0, 0, w, h);
+  }
   draw();
 }
 
