@@ -10,6 +10,9 @@
 const translations = {
   en: {
     nav_home: "Homepage", nav_about: "About", nav_projects: "Projects",
+    proj_csrfpoc_title: "CsrfPoCEngine v1.0.0",
+    proj_csrfpoc_desc: "An automated CSRF PoC Generator extension built for the modern Burp Suite Montoya API. It parses HTTP history requests to dynamically compile cross-origin exploit payloads. Supports standard urlencoded forms, text/plain JSON encapsulation bypasses, and multipart/form-data multi-file upload simulations using asynchronous JS Fetch and Blob arrays. Includes a native JDialog UI popup with instant clipboard staging.",
+    proj_csrfpoc_link: "github.com/YasinKaratoprak/CsrfPoCEngine",
     proj_repoverse_title: "Repoverse",
     proj_repoverse_desc: "Repoverse is a web-based utility built to eliminate the friction of setting up new systems and testing environments. Supporting Ubuntu, Arch, Fedora, macOS, and Windows, it generates customized scripts to install developer tools, offensive security packages, and daily applications with a single command. Whether you are provisioning a fresh Linux environment or preparing a dedicated red teaming virtual machine, Repoverse instantly compiles the necessary package manager commands (apt, pacman, yay, brew, etc.) and readies them for immediate execution",
     proj_repoverse_link: "https://repoverse.yasinkaratoprak.com/",
@@ -27,6 +30,9 @@ const translations = {
   },
   tr: {
     nav_home: "Ana Sayfa", nav_about: "Hakkımda", nav_projects: "Projeler",
+    proj_csrfpoc_title: "CsrfPoCEngine v1.0.0",
+    proj_csrfpoc_desc: "Modern Burp Suite Montoya API mimarisi için geliştirilmiş otomasyon odaklı CSRF PoC jeneratör eklentisi. Gelen HTTP isteklerini analiz ederek amaca yönelik sömürü betikleri hazırlar; standart form verilerini, zayıf yapılandırılmış backend kontrol mekanizmalarını atlatmak için text/plain tabanlı JSON sarmalamalarını ve asenkron JS Fetch/Blob nesneleri kullanan çok parçalı (multipart) dosya yükleme senaryolarını destekler. Tek tıkla panoya kopyalama özellikli yerel JDialog arayüzü barındırır.",
+    proj_csrfpoc_link: "github.com/YasinKaratoprak/CsrfPoCEngine",
     proj_repoverse_title: "Repoverse",
     proj_repoverse_desc: "Repoverse, yeni bir sistem veya test ortamı kurarken harcanan zamanı en aza indirmek için tasarlanmış web tabanlı bir araçtır. Ubuntu, Arch, Fedora, macOS ve Windows işletim sistemlerini destekleyerek; geliştirici araçlarını, siber güvenlik yazılımlarını ve günlük uygulamaları tek bir komutla kurmanızı sağlayan özel terminal betikleri üretir. İster yeni bir Linux ortamını kişiselleştiriyor olun, ister bir red teaming sanal makinesini hazırlıyor olun, Repoverse ihtiyaç duyduğunuz tüm paket yöneticisi (apt, pacman, yay, brew vb.) komutlarını saniyeler içinde oluşturup doğrudan kopyalamanıza olanak tanır",
     proj_repoverse_link: "https://repoverse.yasinkaratoprak.com/",
