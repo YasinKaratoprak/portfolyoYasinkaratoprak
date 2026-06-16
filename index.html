@@ -197,15 +197,40 @@
             class="cursor-blink">█</span></p>
         <h2 class="section-title" data-i18n="nav_contact">Contact</h2>
         <hr class="separator" />
-        <div class="contact-card">
-          <div class="contact-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-            <span><span data-i18n="contact_label">email</span>: <a href="mailto:contact@yasinkaratoprak.com"
-                class="contact-email">contact@yasinkaratoprak.com</a></span>
-          </div>
+
+        <div class="contact-form-wrapper">
+          <h3 class="contact-form-title" data-i18n="contact_form_title">// SEND_MESSAGE</h3>
+          <form action="https://formsubmit.co/yasink3503@gmail.com" method="POST" class="contact-form" id="contact-form">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+            <div class="form-group">
+              <label for="contact-name" class="form-label" data-i18n="contact_form_name">name</label>
+              <input type="text" name="name" id="contact-name" class="form-input" required
+                placeholder="John Doe" data-i18n-placeholder="contact_form_name_ph" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="contact-email-input" class="form-label" data-i18n="contact_form_email">email</label>
+              <input type="email" name="email" id="contact-email-input" class="form-input" required
+                placeholder="you@domain.com" data-i18n-placeholder="contact_form_email_ph" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="contact-subject" class="form-label" data-i18n="contact_form_subject">subject</label>
+              <input type="text" name="_subject" id="contact-subject" class="form-input" required
+                placeholder="Collaboration proposal" data-i18n-placeholder="contact_form_subject_ph">
+            </div>
+            <div class="form-group">
+              <label for="contact-message" class="form-label" data-i18n="contact_form_message">message</label>
+              <textarea name="message" id="contact-message" class="form-input form-textarea" rows="5" required
+                placeholder="Describe what you need..." data-i18n-placeholder="contact_form_message_ph"></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="contact-submit">
+              <span data-i18n="contact_form_send">$ send_message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <path d="M22 2 11 13" /><path d="M22 2 15 22 11 13 2 9z" />
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </section>

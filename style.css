@@ -211,6 +211,27 @@ body::after{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;
 .contact-email{color:var(--cyan);text-shadow:0 0 6px rgba(0,229,255,.2)}
 .contact-email:hover{color:var(--neon);text-shadow:0 0 12px rgba(0,255,65,.4)}
 
+/* ---- Contact Form ---- */
+.contact-form-wrapper{margin-top:1.2rem;border:1px solid var(--glass-border);background:var(--glass);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));border-radius:var(--radius);padding:1.3rem;transition:all .4s var(--ease)}
+.contact-form-wrapper:hover{border-color:var(--border-hover);box-shadow:0 0 30px rgba(0,255,65,.06)}
+.contact-form-title{font-family:var(--font-display);font-size:.8rem;font-weight:500;color:var(--neon);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem;text-shadow:0 0 10px rgba(0,255,65,.25)}
+.contact-form{display:flex;flex-direction:column;gap:.9rem}
+.form-group{display:flex;flex-direction:column;gap:.3rem}
+.form-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:var(--red);font-family:var(--font-display);text-shadow:0 0 6px rgba(255,0,60,.2)}
+.form-label::before{content:'> ';color:var(--neon);text-shadow:0 0 4px rgba(0,255,65,.5)}
+.form-input{font-family:var(--font);font-size:.84rem;color:var(--text);background:rgba(3,3,5,.5);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:.6rem .85rem;transition:all .3s var(--ease);outline:none;-webkit-appearance:none}
+.form-input::placeholder{color:var(--text-muted);font-size:.78rem}
+.form-input:focus{border-color:var(--neon);box-shadow:0 0 12px rgba(0,255,65,.12),inset 0 0 20px rgba(0,255,65,.03);background:rgba(3,3,5,.7)}
+.form-input:hover:not(:focus){border-color:rgba(0,255,65,.15)}
+.form-textarea{resize:vertical;min-height:100px;line-height:1.6}
+.form-submit{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;align-self:flex-start;padding:.55rem 1.4rem;font-family:var(--font);font-size:.82rem;color:var(--neon);background:rgba(0,255,65,.04);border:1px solid rgba(0,255,65,.2);border-radius:var(--radius-sm);cursor:pointer;transition:all .35s var(--ease);position:relative;overflow:hidden;letter-spacing:.03em}
+.form-submit::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,65,.08),transparent 60%);opacity:0;transition:opacity .35s}
+.form-submit:hover::before{opacity:1}
+.form-submit:hover{color:#030305;background:var(--neon);border-color:var(--neon);box-shadow:0 0 20px rgba(0,255,65,.4),0 0 50px rgba(0,255,65,.15);text-shadow:none}
+.form-submit:hover svg{stroke:#030305}
+.form-submit:active{transform:scale(.97)}
+.form-submit svg{width:14px;height:14px;flex-shrink:0;transition:stroke .3s}
+
 /* ---- Status line (new) ---- */
 .status-bar{display:flex;gap:1.5rem;margin-top:1.6rem;padding:.6rem 0;border-top:1px solid var(--border);font-size:.7rem;color:var(--text-muted)}
 .status-item{display:flex;align-items:center;gap:.35rem}
@@ -547,6 +568,63 @@ body::after{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;
 [data-theme="light"] .contact-email:hover {
   color: var(--neon);
   text-shadow: none;
+}
+
+/* Contact form — light */
+[data-theme="light"] .contact-form-wrapper {
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(0,0,0,.07);
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+[data-theme="light"] .contact-form-wrapper:hover {
+  border-color: rgba(13,124,63,.2);
+  box-shadow: 0 6px 20px rgba(0,0,0,.07);
+}
+[data-theme="light"] .contact-form-title {
+  color: var(--neon);
+  text-shadow: none;
+}
+[data-theme="light"] .form-label {
+  color: var(--red);
+  text-shadow: none;
+}
+[data-theme="light"] .form-label::before {
+  color: var(--neon);
+  text-shadow: none;
+}
+[data-theme="light"] .form-input {
+  background: rgba(255,255,255,.8);
+  border: 1px solid rgba(0,0,0,.1);
+  color: var(--text);
+}
+[data-theme="light"] .form-input::placeholder {
+  color: var(--text-muted);
+}
+[data-theme="light"] .form-input:focus {
+  border-color: var(--neon);
+  box-shadow: 0 0 8px rgba(13,124,63,.1);
+  background: #fff;
+}
+[data-theme="light"] .form-input:hover:not(:focus) {
+  border-color: rgba(13,124,63,.2);
+}
+[data-theme="light"] .form-submit {
+  color: var(--neon);
+  background: rgba(13,124,63,.04);
+  border: 1px solid rgba(13,124,63,.2);
+}
+[data-theme="light"] .form-submit::before {
+  background: linear-gradient(135deg, rgba(13,124,63,.06), transparent);
+}
+[data-theme="light"] .form-submit:hover {
+  color: #fff;
+  background: var(--neon);
+  border-color: var(--neon);
+  box-shadow: 0 4px 16px rgba(13,124,63,.25);
+  text-shadow: none;
+}
+[data-theme="light"] .form-submit:hover svg {
+  stroke: #fff;
 }
 
 /* ---- Status bar ---- */

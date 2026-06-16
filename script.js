@@ -25,7 +25,18 @@ const translations = {
     about_text: "I have been involved in computer security since I was 16. I am a Computer Engineering student at Yaşar University. I am currently interested in web security and low-level security. In my spare time, I develop open-source tools and create content.",
     pres_title: "IDOR Workshop", pres_desc: "Detection and Analysis of IDOR Vulnerabilities",
     pres_meta: "Yaşar University Cybersecurity Society",
-    contact_label: "email", footer_rights: "All rights reserved.",
+    contact_label: "email",
+    contact_form_title: "// SEND_MESSAGE",
+    contact_form_name: "name",
+    contact_form_name_ph: "John Doe",
+    contact_form_email: "email",
+    contact_form_email_ph: "you@domain.com",
+    contact_form_subject: "subject",
+    contact_form_subject_ph: "Collaboration proposal",
+    contact_form_message: "message",
+    contact_form_message_ph: "Describe what you need...",
+    contact_form_send: "$ send_message",
+    footer_rights: "All rights reserved.",
     status_sys: "SYS:ONLINE", status_sec: "SEC:ARMED", status_threat: "THREAT:MONITORING",
   },
   tr: {
@@ -45,7 +56,18 @@ const translations = {
     about_text: "16 yaşımdan beri bilgisayar güvenliği ile ilgileniyorum. Yaşar Üniversitesi'nde Bilgisayar Mühendisliği öğrencisiyim. Şu anda web güvenliği ve düşük seviye güvenlik alanlarıyla ilgileniyorum. Boş zamanlarımda açık kaynaklı araçlar geliştiriyor ve içerik üretiyorum.",
     pres_title: "IDOR Atölyesi", pres_desc: "IDOR Zafiyetlerinin Tespiti ve Analizi",
     pres_meta: "Yaşar Üniversitesi Siber Güvenlik Topluluğu",
-    contact_label: "e-posta", footer_rights: "Tüm hakları saklıdır.",
+    contact_label: "e-posta",
+    contact_form_title: "// MESAJ_GÖNDER",
+    contact_form_name: "isim",
+    contact_form_name_ph: "Adınız Soyadınız",
+    contact_form_email: "e-posta",
+    contact_form_email_ph: "siz@alan.com",
+    contact_form_subject: "konu",
+    contact_form_subject_ph: "İş birliği teklifi",
+    contact_form_message: "mesaj",
+    contact_form_message_ph: "İhtiyacınızı açıklayın...",
+    contact_form_send: "$ mesaj_gönder",
+    footer_rights: "Tüm hakları saklıdır.",
     status_sys: "SİSTEM:AKTİF", status_sec: "GÜVENLİK:HAZIR", status_threat: "TEHDİT:İZLENİYOR",
   },
 };
@@ -79,6 +101,10 @@ function applyLanguage(lang) {
       el.textContent = dict[key];
       if (el.hasAttribute("data-decrypt")) el.setAttribute("data-original", dict[key]);
     }
+  });
+  $$("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (dict[key] !== undefined) el.placeholder = dict[key];
   });
   document.documentElement.lang = lang;
   langLabel.textContent = lang === "en" ? "TR" : "EN";
@@ -241,7 +267,6 @@ function initBackground() {
       }
     }
 
-    // Draw particles + mouse interaction
     for (const p of particles) {
       // Mouse connection
       if (mouse.x !== null) {
