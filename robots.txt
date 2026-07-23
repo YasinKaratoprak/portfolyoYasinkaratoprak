@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yasinkaratoprak.com/sitemap.xml
